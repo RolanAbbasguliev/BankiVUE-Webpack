@@ -1,6 +1,8 @@
 # BankiVUE-Webpack
 
-to start application run: npm run dev 
+to start application run: 
+1) npm i  [install dependecies]
+2) npm run dev  [run web application]
 
 Тестовое задание: Banki Shop
 Опасние: 
