@@ -5,8 +5,6 @@
     "main": "index.js",
     "scripts": {
         "dev": "webpack-dev-server --mode development",
-        "postinstall": "npm run build",
-        "start": "node server.js"
     },
     "author": "Rolan Abbasguliev",
     "license": "ISC",
