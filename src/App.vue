@@ -3,16 +3,13 @@
         <div class="wrapper">
             <my-header @sortedCards="getSearch" :cards="$store.state.cards" />
             <card-list :cards="sortedCards" />
-            <my-footer /> 
+            <my-footer />
         </div>
     </div>
 </template>
 
 <script>
-
 export default {
-
-
     data() {
         return {
             sortedCards: [],
@@ -89,5 +86,4 @@ h6 {
     flex-direction: column;
     min-height: 100vh;
 }
-
 </style>

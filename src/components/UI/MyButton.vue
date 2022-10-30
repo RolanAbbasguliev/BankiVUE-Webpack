@@ -18,11 +18,6 @@ export default {
             required: false,
         },
     },
-    // data() {
-    //     return {
-    //         isActive: false,
-    //     };
-    // },
 
     methods: {
         toggleBtn() {

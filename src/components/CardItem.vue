@@ -1,6 +1,11 @@
 <template>
     <div class="container">
-        <my-modal v-show="modalVisible" :card="card"></my-modal>
+        <my-modal 
+            :show="modalVisible" 
+            :card="card"
+            @ModalShow="ModalStat">
+        
+        </my-modal>
         <div class="card" :class="card.status === 'sold' ? 'soldCard' : ''">
             <div class="top_info" @click="showModal">
                 <img
@@ -28,7 +33,7 @@
                 <my-button
                     v-if="card.status === 'active'"
                     @toggle="btnStat"
-                    @click="saveCard(card)"
+                    @click.native="saveCard(card)"
                     :btnIsActive="btnIsActive"
                 ></my-button>
             </div>
@@ -60,18 +65,20 @@ export default {
     },
 
     methods: {
+        ModalStat(value) {
+            this.modalVisible = value;
+        },
         showModal() {
-            console.log(this.card);
             this.modalVisible = true;
         },
 
         btnStat(btn) {
+
             this.btnIsActive = btn ? false : true;
         },
 
-        async saveCard(card) {
+        saveCard(card) {
             //add Id
-
             console.log("ACTIVE", this.btnIsActive);
             if (this.btnIsActive) {
                 if (localStorage.storeId) {

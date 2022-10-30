@@ -1,6 +1,5 @@
 <template>
-    <div class="modal" v-if="show" @click="hideModal"></div>
-    <!-- <div class="modal" v-if="this.visible" @click="hideModal">
+    <div class="modal" v-if="show" @click="hideModal">
         <div @click.stop class="modal_container">
             <h1 class="title">{{ card.title }}</h1>
             <div class="modal_info">
@@ -8,7 +7,7 @@
                     width="280"
                     height="160"
                     class="image"
-                    :src="require(`../assets/img/${card.id}.png`)"
+                    :src="require(`../../assets/img/${card.id}.png`)"
                     alt="img"
                 />
                 <h4 class="description">
@@ -16,7 +15,7 @@
                 </h4>
             </div>
         </div>
-    </div> -->
+    </div>
 </template>
 
 <script>
@@ -34,7 +33,7 @@ export default {
     },
     methods: {
         hideModal() {
-            this.$emit("update:show", false);
+            this.$emit("ModalShow", false);
         },
     },
 };
@@ -63,7 +62,7 @@ export default {
     text-align: center;
     align-items: center;
 
-    /* background-image: url("../../assets/img/back-ground.webp"); */
+    background: url(../../assets/img/back-ground.jpeg) no-repeat;
     background-size: cover;
 }
 

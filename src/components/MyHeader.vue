@@ -4,7 +4,7 @@
             <nav class="nav_burger">
                 <div
                     class="burger_icon"
-                    @click="this.burgerActive = !this.burgerActive"
+                    @click="burgerClick"
                     :class="{ burger_active: burgerActive }"
                 >
                     <fa icon="fa-bars" />
@@ -74,6 +74,13 @@ export default {
             searchQuery: "",
             burgerActive: false,
         };
+    },
+
+    methods: {
+        burgerClick() {
+            this.burgerActive = !this.burgerActive;
+        }
+
     },
 
     computed: {
